@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:test # memory 모드로 동작. 외부 DB 붙지 않음.
+      username: sa
+      password:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      driver-class-name: org.h2.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_batch_fetch_size: 100
+        format_sql: true
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  redis:
+    host: localhost
+    port: 6379
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
