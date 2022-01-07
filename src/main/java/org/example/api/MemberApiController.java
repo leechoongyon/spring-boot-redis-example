@@ -22,4 +22,17 @@ public class MemberApiController {
         memberService.saveMemberUsingRedis(memberDto);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/api/v2/member")
+    public ResponseEntity<?> saveMemberTransactionalUsingSessionCallback(@RequestBody MemberDto memberDto) {
+        memberService.saveMemberTransactionalUsingSessionCallback(memberDto);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/api/v3/member")
+    public ResponseEntity<?> saveMemberTransactional(@RequestBody MemberDto memberDto) {
+        memberService.saveMemberTransactional(memberDto);
+        return ResponseEntity.ok().build();
+    }
+
 }

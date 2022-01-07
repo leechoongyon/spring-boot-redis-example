@@ -13,6 +13,7 @@ import java.util.Map;
 public class MemberDto {
     private Long id;
     private String name;
+    private int age;
 
     public static MemberDto of(Map<String, Object> result) {
         MemberDto memberDto = MemberDto.builder()
